@@ -26,11 +26,11 @@ describe('Record creation tests', () => {
     });
 
     it('Create a new Account Record', async () => {
-        let recordFormModal;
+        let recordFormModal = await openRecordModal(baseUrl, RecordType.Account);
         // TODO - depending on org setup, modal might not present, then comment next lines
         /*
         console.log('Load Change Record Type Modal');
-        recordFormModal = await openRecordModal(baseUrl, RecordType.Account);
+        recordFormModal = await utam.load(RecordActionWrapper);
         console.log("Change Record Type Modal: click button 'Next'");
         const changeRecordTypeFooter = await recordFormModal.waitForChangeRecordFooter();
         await changeRecordTypeFooter.clickButton('Next');
